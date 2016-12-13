@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+<!--<link rel='stylesheet' href=''>-->
+</head>
+<body>
+<div id='root'>
+    <ul>
+        <li v-for="name in names" v-text="name"></li>
+    </ul>
+
+    <input type="text" v-model="name_input">
+    
+    <!--<button type="button" v-on:click="addName">Add</button>-->
+    <button type="button" @click="addName">Add</button>
+</div>
+
+<script src='js/vue.min.js'></script>
+<script>
+var app = new Vue({
+    el: '#root',
+    data: {
+        name_input: '',
+        names: ["Ganesh", "Mahesh", "Suresh", "Pong"]
+    },
+    methods: {
+        addName () {
+            this.names.push(this.name_input);
+            this.name_input = "";
+        }
+    }
+});
+</script>
+</body>
+</html>

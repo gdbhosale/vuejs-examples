@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+<!--<link rel='stylesheet' href=''>-->
+<style>
+    .color-red{color: red;}
+    .color-blue{color: blue;}
+
+    .is-loading {background: #F63;}
+</style>
+</head>
+<body>
+<div id='root'>
+    <h1 :class="classname">Test Content</h1>
+    <button @click="toggleLoading" :class="{ 'is-loading': isLoading }">Toggle Loading</button>
+    <button :disabled="DisabledBtn">Test Button</button>
+    <button @click="toggleDisabled">Toggle Disabled</button>
+</div>
+
+<script src='js/vue.min.js'></script>
+<script>
+var app = new Vue({
+    el: '#root',
+    data: {
+        classname: 'color-red',
+        isLoading: false,
+        DisabledBtn: false,
+    },
+    methods: {
+        toggleLoading() {
+            if(this.isLoading)
+                this.isLoading = false;
+            else
+                this.isLoading = true;
+        },
+        toggleDisabled() {
+            if(this.DisabledBtn)
+                this.DisabledBtn = false;
+            else
+                this.DisabledBtn = true;
+        }
+    }
+});
+</script>
+</body>
+</html>

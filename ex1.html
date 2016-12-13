@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+<!--<link rel='stylesheet' href=''>-->
+</head>
+<body>
+    <div id="root">
+        <input type="text" id="input" v-model="message"><br><br>
+        The value of message is {{ message }}<br>
+        Username: {{ username }}
+
+    </div>
+
+<script src="js/vue.min.js"></script>
+<script>
+new Vue({
+    el: '#root',
+    data: {
+        message: 'Hi there',
+        username: 'Ganesh'
+    }
+});
+</script>
+</body>
+</html>

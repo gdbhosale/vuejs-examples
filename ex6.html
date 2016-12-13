@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+<!--<link rel='stylesheet' href=''>-->
+</head>
+<body>
+<div id='root'>
+    <h1>All Tasks</h1>
+    <ul style="width: 200px;">
+        <li v-for="task in tasks">{{ task.desc }} <span style="float:right;">{{ task.completed }}</span></li>
+    </ul>
+    <h1>Completed Tasks</h1>
+    <ul>
+        <li v-for="task in tasks" v-if="task.completed" v-text="task.desc"></li>
+    </ul>
+    <h1>InComplete Tasks</h1>
+    <ul>
+        <li v-for="task in incompleteTasks" v-text="task.desc"></li>
+    </ul>
+</div>
+
+<script src='js/vue.min.js'></script>
+<script>
+var app = new Vue({
+    el: '#root',
+    data: {
+        tasks: [
+            {desc: 'Go to store', completed: true},
+            {desc: 'Go to Home', completed: true},
+            {desc: 'Make Food', completed: false},
+            {desc: 'Eat Pizza', completed: true},
+            {desc: 'Make Dinner', completed: false},
+            {desc: 'Finish Work', completed: true},
+            {desc: 'Clean Home', completed: false},
+        ]
+    },
+    computed: {
+        incompleteTasks() {
+            // return this.tasks.filter(task => !task.completed);
+
+            return this.tasks.filter(function(task) {
+                return !task.completed;
+            });
+        }
+    }
+});
+</script>
+</body>
+</html>

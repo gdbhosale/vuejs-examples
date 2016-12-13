@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+<!--<link rel='stylesheet' href=''>-->
+</head>
+<body>
+<div id='root'>
+    <button v-bind:title="title">Hover 1</button>
+    <button :title="title">Hover 2</button>
+</div>
+
+<script src='js/vue.min.js'></script>
+<script>
+var app = new Vue({
+    el: '#root',
+    data: {
+        title: "JS Title"
+    }
+});
+</script>
+</body>
+</html>
