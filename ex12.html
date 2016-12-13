@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel='stylesheet' href='css/bulma.css'>
+<style>
+    body {
+        padding-top: 40px;
+    }
+</style>
+</head>
+<body>
+<div id='root' class="container">
+    <coupon @applied="onCouponApplied"></coupon>
+
+    <h1 v-if="couponApplied">You used a coupon</h1>
+</div>
+
+<script src='js/vue.min.js'></script>
+<script src='ex12.js'></script>
+</body>
+</html>
