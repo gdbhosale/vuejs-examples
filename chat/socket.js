@@ -4,8 +4,8 @@ var io = require('socket.io')(server);
 
 server.listen(3004);
 
-app.get('/', function(resquest, responce) {
-    responce.sendFile(__dirname + '/index.html');
+app.get('/', function(request, response) {
+    response.sendFile(__dirname + '/index.html');
 });
 
 io.on('connection', function(socket) {
