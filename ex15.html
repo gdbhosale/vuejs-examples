@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel='stylesheet' href='css/bulma.css'>
+<style>
+    body {
+        padding-top: 40px;
+    }
+</style>
+</head>
+<body>
+<div id='root'>
+    
+    <progress-view inline-template>
+        <div>
+            <h1>Your progress is {{ progress }}</h1>
+
+            <button @click="updateProgress">Make Progress</button>
+        </div>
+    </progress-view>
+
+</div>
+
+<script src='js/vue.js'></script>
+<script>
+Vue.component('progress-view', {
+    data() {
+        return {
+            progress: 50
+        }
+    },
+    methods: {
+        updateProgress() {
+            this.progress++;
+        }
+    }
+});
+var app = new Vue({
+    el: '#root'
+});
+</script>
+</body>
+</html>
