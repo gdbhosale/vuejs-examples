@@ -1,3 +1,5 @@
+Vue.config.devtools = true;
+
 Vue.component('task-list', {
     template: `
         <div>

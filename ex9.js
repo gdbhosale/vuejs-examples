@@ -1,3 +1,5 @@
+Vue.config.devtools = true;
+
 Vue.component('message', {
     props: [
         'title',

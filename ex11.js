@@ -1,4 +1,4 @@
-Vue.config.devtools = true
+Vue.config.devtools = true;
 
 Vue.component('tabs', {
     template: `
